@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git') {
+            steps {
+                git branch: 'feature', url: 'https://github.com/Pravalikadev/jenkinslast_task.git'
+            }
+        }
+        stage('Shellscript'){
+            steps {
+                sh '''chmod 777 shellscriptfile.sh
+./shellscriptfile.sh
+chmod 777 shellscriptfile2.sh
+./shellscriptfile2.sh'''
+            }
+        }
+    }
+}
+

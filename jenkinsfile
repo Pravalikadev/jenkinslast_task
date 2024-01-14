@@ -4,10 +4,16 @@ pipeline {
     stages {
         stage('Git') {
             steps {
-                git branch: 'feature', url: 'https://github.com/Pravalikadev/jenkinslast_task.git'
+                git 'https://github.com/Pravalikadev/jenkinslast_task.git'
             }
         }
-        stage('Shellscript'){
+        stage('java'){
+            steps {
+                sh '''javac javafile.java
+java javafile.java'''
+            }
+        }
+        stage('shellscript'){
             steps {
                 sh '''chmod 777 shellscriptfile.sh
 ./shellscriptfile.sh

@@ -13,7 +13,7 @@ pipeline {
 java javafile.java'''
             }
         }
-        stage('Git'){
+        stage('git'){
             steps {
                 git branch: 'feature', url: 'https://github.com/Pravalikadev/jenkinslast_task.git'
             }
